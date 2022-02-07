@@ -23,7 +23,7 @@ email: eero.mutka@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Sharing my adventures in programming and graphics
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://eeromutka.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://eeromutka.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 
