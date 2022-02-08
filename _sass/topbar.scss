@@ -1,0 +1,41 @@
+.topbar {
+    max-width: $column_width;
+    margin-top: 0px;
+    margin-bottom: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    @media (max-width: $column-width-trigger) {
+      width: auto;
+      padding-left: $column-padding;
+      padding-right: $column-padding;
+    }
+    .topbar-contents {
+      padding-top: 24px;
+      padding-left: 0px;
+      padding-right: 0px;
+      padding-bottom: 24px;
+    }
+    .title {
+      &:hover,
+      &:focus, {
+        border-bottom: none;
+      }
+      color: $dark-color;
+      font-family: $page-title-font;
+      font-size: 64px;
+      line-height: 56px;
+    }
+    nav {
+      margin-top: 48px;
+      font-size: 20px;
+      text-align: left;
+    }
+    .navlink {
+      color: $dark-color;
+      &:hover,
+      &:focus, {
+        border-bottom: 1px solid $dark-color;
+      }
+    }
+  }
+  

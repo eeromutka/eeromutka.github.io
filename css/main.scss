@@ -1,0 +1,29 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+/* Text colors */
+$lightest-color: #cccccc;
+$light-color: #aaaaaa;
+$normal-color: #4a4a4a;
+$dark-color: #2a2a2a;
+
+/* Background colors */
+$bg-color: #efefef;
+
+/* Dimensions */
+$column-width: 600px;
+$column-padding: 30px;
+$column-width-trigger: $column-width + 2*$column-padding;
+
+/* Fonts */
+$title-font: 'Oswald', sans-serif;
+$subtitle-font: 'Open Sans', sans-serif;
+$page-title-font: $title-font;
+$page-subtitle-font: $subtitle-font;
+$body-font: 'Open Sans', sans-serif;
+
+@import "topbar";
+@import "snippets";
+@import "content";
+@import "syntax";

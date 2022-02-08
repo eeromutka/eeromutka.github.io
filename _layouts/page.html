@@ -2,7 +2,14 @@
 layout: default
 ---
 
-<div class="page">
-  <h1 class="page-title">{{ page.title }}</h1>
-  {{ content }}
-</div>
+<article>
+
+    {% if page.top-text %}
+        <div class=pagetitle>{{ page.top-text }}</div>
+    {% else %}
+        <div class=pagetitle>{{ page.title }}</div>
+    {% endif %}
+
+    {{ content }}
+    
+</article>
