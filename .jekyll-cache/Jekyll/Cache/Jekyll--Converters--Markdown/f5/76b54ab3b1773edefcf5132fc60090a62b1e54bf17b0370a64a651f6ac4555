@@ -1,4 +1,4 @@
-I"�<p>Recently I started a new project of making a CSG editor. Or, at least that’s the very first starting point for the project. I didn’t exactly know how CSG worked before, so I looked into some articles (link). I learned some very cool things, such as what a half-edge data structure is. Previously, it had been a big mystery to me how you would actually implement a 3d modeling operation such as extrusion, bevel, or inserting edge loops, but this very tiny idea really opened things up for me. It’s all so clear now! You should first read about it here aren’t familiar with it (link). You can trivially convert a half-edge mesh to a more traditional triangle-mesh that you’d feed to the GPU.</p>
+I"�<p>Recently I started a new project of making a CSG editor. Or, at least that’s the very first starting point for the project. I didn’t exactly know how CSG worked before, so I looked into some articles (link). I learned some very cool things, such as what a half-edge data structure is. Previously, it had been a big mystery to me how you would actually implement a 3d modeling operation such as extrusion, bevel, or inserting edge loops, but this very tiny idea really opened things up for me. It’s all so clear now! You should first read about it here aren’t familiar with it (link). You can trivially convert a half-edge mesh to a more traditional triangle-mesh that you’d feed to the GPU.</p>
 
 <!--more-->
 
@@ -53,7 +53,7 @@
 
 <p>I started thinking about this problem and why the “clean” solution is more work than the dumb and dirty solution, that was <em>only</em> O(n^2). Looking at a sketch I made, if we add another line (or a plane in 3d), the vast majority of intersection points will be outside the shape and unnecessary work:</p>
 
-<p><img alt="Lots of edges" src="/israh-jekyll-theme/media/lots_of_edges.png" /></p>
+<p><img alt="Lots of edges" src="/media/lots_of_edges.png" /></p>
 
 <p>Maybe we could keep a sort-of bounding box that we would shrink with each plane and discard planes and vertices that lie outside it? That seems pretty complex and an after-thought. I looked into known methods for solving the <a href="https://en.wikipedia.org/wiki/Vertex_enumeration_problem">vertex enumeration problem</a>, such as <a href="https://link.springer.com/chapter/10.1007/3-540-61576-8_77">this</a> “simple” and <a href="http://cgm.cs.mcgill.ca/~avis/doc/avis/AF92b.pdf">this</a> “extremely simple” algorithm. Suffice to say, I didn’t get far.</p>
 
