@@ -26,19 +26,17 @@ $xl-screen: 80rem;
   --code-bg-color: var(--oc-gray-1);
   --heading-color: var(--oc-black);
   --border-color: var(--oc-gray-4);
-  --link-color: var(--oc-blue-9);
-  --link-color-rgb: var(--oc-blue-9-rgb);
-  --link-hover-color: var(--oc-blue-7);
-  --info-color: var(--oc-green-9);
+  --link-color: #e7a67b;
+  --link-color-rgb: #e7a67b;
+  --link-hover-color: #e7a67b;
+  --info-color: #d1b284;
   --warning-color: var(--oc-yellow-9);
   --danger-color: var(--oc-red-9);
 }
-
+/*
 @media (prefers-color-scheme: dark) {
   :root {
-    /**
-     * Color
-     */
+    
     --body-bg-color: var(--oc-gray-9);
     --body-color: var(--oc-gray-4);
     --code-bg-color: var(--oc-gray-7);
@@ -52,3 +50,4 @@ $xl-screen: 80rem;
     --danger-color: var(--oc-red-1);
   }
 }
+*/

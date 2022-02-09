@@ -22,7 +22,7 @@
   padding-bottom: var(--spacer);
   margin-bottom: var(--spacer-3);
 }
-
+/*
 .masthead-title {
   font-size: 1.3em;
   font-weight: bold;
@@ -35,6 +35,22 @@
   .tagline {
     opacity: .5;
   }
+}
+*/
+.masthead-title {
+	font-size: 2.3em;
+	font-weight: bold;
+	
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+	
+}
+.tagline {
+	font-size: 0.5em;
+	font-weight: normal;
+	opacity: .5;
 }
 
 .nav-list {  
@@ -54,13 +70,13 @@
 
     &:hover,
     &:focus {
-      text-decoration: line-through;
+      text-decoration: underline;
     }
   }
-
+/*
   a.current {
-    text-decoration: line-through;
-  }
+    text-decoration: underline;
+  }*/
 }
 
 /**
