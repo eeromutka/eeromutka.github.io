@@ -10,13 +10,13 @@ Recently I started a new project of making a real-time CSG editor. Or, at least 
 <!--more-->
 
 <p class="message-info">
-NOTE: Instead of storing half-edges separately, I'm bundling them together in a single Edge - struct that stores both of them. This way we require one less pointer to worry about. Also, if we want to store data that is shared per each edge, such as sharpness/smoothness or UV-seam flags, it's stored right there in one place. A half-edge index is the edge index in the first 31 bits and the last bit indicating it's the first or the second half.
+NOTE: Instead of storing half-edges separately, I'm bundling them together in a single Edge - struct that stores both of them. This way we require one less pointer to worry about. Also, if we want to store data that is shared per each edge, such as sharpness/smoothness or UV-seam flags, it's stored right there in one place. A half-edge index is the edge index in the first 31 bits and the last bit indicating it's the first or the second half. Also, 
 </p>
 
 One smart idea of CSG is that brushes are not defined by a mesh, but by a list of planes that each cut the space in half. It is much easier to perform boolean operations with lists of planes, than it is with arbitrary triangle meshes. I'm currently on the [second part of the real-time CSG blog](http://sandervanrossen.blogspot.com/2009/12/realtime-csg-part-2.html), which presents two methods for converting a list of planes into a 3d mesh. The first method, which apparently is widely used, is to project a huge axis-aligned rectangle per each cut-plane to form a polygon, then slice that polygon per each plane, and finally merge all of the vertices. My instincts agree with the author in that this seems pretty ugly. We'd have to decide on a "big value" that covers everything. What would happen if this value is too large? And, we'd have to use epsilons for floating point comparisons for vertex-merging, and having to merge vertices is just annoying.
 
 <p class="message-info">
-TIP: Instead of storing 3d planes as point + normal, store them by their mathematical coefficients ax + by + cz + d = 0, where [a, b, c] represent the normal and 'd' the signed distance of the origin from the plane. It's less data and less useless degrees of freedom, which is always good to minimize. Calculating the distance of a point to the plane is simply  dot(point, plane.normal) - plane.d
+NOTE: Instead of storing 3d planes as point + normal, store them by their mathematical coefficients ax + by + cz + d = 0, where [a, b, c] represent the normal and 'd' the signed distance of the origin from the plane. It's less data and less useless degrees of freedom, which is always good to minimize. Calculating the distance of a point to the plane is simply  dot(point, plane.normal) - plane.d
 </p>
 
 The second, "precise", method is to loop through all combinations of plane-triples to find the intersection vertices (that are also inside the shape), then generate geometry from that. My code for this looked something like this:
