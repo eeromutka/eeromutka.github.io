@@ -1,0 +1,12 @@
+- title: Email
+  url: mailto:eero.mutka@gmail.com
+  icon: fas fa-envelope
+- title: Twitter
+  url: https://twitter.com/EeroMutka
+  icon: fab fa-twitter
+- title: GitHub
+  url: https://github.com/zivhub
+  icon: fab fa-github
+- title: Youtube
+  url: https://www.youtube.com/channel/UC0hAL_E6hBdQW0y6Cl94SLA
+  icon: fab fa-youtube
