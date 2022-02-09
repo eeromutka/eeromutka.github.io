@@ -77,4 +77,7 @@ The algorithm is quite simple: start by finding **any** edge that intersects the
 
 This is a lot faster than any of the previously discussed methods. Per each plane, the worst case is you need to loop through all the existing geometry once as opposed to all of the other planes! You could have thousands of planes and easily process it all in less than a millisecond. The method is also as stable as it can be, it doesn't involve any epsilons. Hooray!
 
+<iframe width="700" height="480" src="https://youtu.be/EghUcSJ1qrg" frameborder="0" allowfullscreen></iframe>
+<p><br></p>
+
 The stability of CSG is a big reason I went down this path. Arbitrary mesh-vs-mesh booleans are really difficult and often unstable. If you try to boolean two complicated meshes together in blender/maya or if they have sides that barely touch, you can expect troubles. They have a have a reputation for being a bit wonky, which is probably one reason they're not used that much. Frankly, you can't really even define a good way for them to work in some situations. What **should** happen when you boolean a mesh with holes and flying geometry with another? But if we just set the constraint that at least one of them has to be a BSP brush (or tree) defined by planes, everything is really intuitive! I want my editor to be robust with no corner-cases no matter how weird shapes you input together. So far this seems doable, we'll see how it goes!
