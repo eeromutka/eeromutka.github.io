@@ -1,27 +1,23 @@
----
----
-
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-	    {% include head.html %}
-	</head>
-	<body>
-		{% include topbar.html %}
-		<main>
-			{{ content }}
-			{% include footer.html %}
-		</main>
-		<script>
-			$("script[type='math/tex']").replaceWith(function() {
-				var tex = $(this).text();
-				return katex.renderToString(tex, {displayMode: false});
-			});
-			$("script[type='math/tex; mode=display']").replaceWith(function() {
-				var tex = $(this).html();
-				return katex.renderToString(tex.replace(/%.*/g, ''), {displayMode: true});
-			});
-		  </script>
-	</body>
-</html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+  {% include head.html %}
+  <body>
+    <div class="container">
+      {% include header.html %}
 
+      <main>
+        {{ content }}
+      </main>
+
+      {% include footer.html %}
+    </div>
+
+    {% if page.math %}
+      {% include mathjax.html %}
+    {% endif %}
+
+    {% if jekyll.environment == 'production' and site.google_analytics %}
+      {% include google-analytics.html %}
+    {% endif %}
+  </body>
+</html>

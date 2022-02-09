@@ -1,3 +1,0 @@
-I"�<p>Recently I started a new project of making a CSG editor. Or, at least that’s the very first starting point for the project. I didn’t exactly know how CSG worked before, so I looked into some articles (link). I learned some very cool things, such as what a half-edge data structure is. Previously, it had been a big mystery to me how you would actually implement a 3d modeling operation such as extrusion, bevel, or inserting edge loops, but this very tiny idea really opened things up for me. It’s all so clear now! You should first read about it here aren’t familiar with it (link). You can trivially convert a half-edge mesh to a more traditional triangle-mesh that you’d feed to the GPU.</p>
-
-:ET
